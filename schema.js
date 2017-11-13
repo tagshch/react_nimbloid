@@ -1,13 +1,13 @@
-const component_statefull = {
+const simple_statefull_component = {
     "type": "statefull",
-    "method": ["render"],
+    "method": ["init","componentDidMount","render"],
     "state": [
         'age: 15',
         'name: "John"'
     ]
 };
 
-const component_stateless = {
+const simple_stateless_component = {
     "type": "stateless"
 };
 
@@ -18,21 +18,27 @@ const global_schema = {
         {
             "type": "component",
             "name": "App",
-            "schema": component_statefull
+            "schema": simple_statefull_component
         },
         {
             "type": "component",
             "name": "StatelessApp",
-            "schema": component_stateless
+            "schema": simple_stateless_component
         },
         {
             "type": "folder",
             "name": "components",
-            "items": [{
-                "type": "component",
-                "name": "SubApp",
-                "schema": component_stateless
-            }]
+            "items": [
+                {
+                    "type": "component",
+                    "name": "SubApp",
+                    "schema": simple_stateless_component
+                },
+                {
+                    "type": "folder",
+                    "name": "empty_folder"
+                }
+            ]
         }
     ]
 };

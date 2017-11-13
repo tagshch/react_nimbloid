@@ -91,7 +91,7 @@ const create_schema = (obj, _path) => {
             let folder_path = _path + obj.name;
             dir.create(folder_path);
 
-            if(obj.items.length > 0){
+            if(obj.items && obj.items.length > 0){
                 obj.items.forEach(item =>{
                     create_schema(item, folder_path + '/');
                 });

@@ -5,4 +5,4 @@
 
 2. Then run <code>node generate.js</code> there.
 
-3. It will generate folders and files.
+3. It will generate folders and src files for you.
