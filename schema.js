@@ -1,5 +1,5 @@
-const simple_statefull_component = {
-    "type": "statefull",
+const simple_stateful_component = {
+    "type": "stateful",
     "method": ["init","componentDidMount","render"],
     "state": [
         'age: 15',
@@ -18,7 +18,7 @@ const global_schema = {
         {
             "type": "component",
             "name": "App",
-            "schema": simple_statefull_component
+            "schema": simple_stateful_component
         },
         {
             "type": "component",

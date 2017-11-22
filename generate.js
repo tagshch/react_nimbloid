@@ -51,7 +51,7 @@ const stateless = (name) => {
     return str;
 };
 
-const statefull = (name, schema) => {
+const stateful = (name, schema) => {
     let { method, state } = schema;
 
     let str = `class ${name} extends React.Component{`;
@@ -78,7 +78,7 @@ const create_schema = (obj, _path) => {
             let file_path = _path + obj.name + '.js';
             let schema = (({ name, schema }, path) => {
                 switch(schema.type){
-                    case "statefull": return statefull(name, schema);
+                    case "stateful": return stateful(name, schema);
                     case "stateless": return stateless(name);
                     default: throw Error('No type of schema in component!', name, path);
                 }
@@ -104,14 +104,6 @@ const create_schema = (obj, _path) => {
 };
 
 
-/*
-* RUN CODE
-* */
-create_schema(schema.global, __dirname + '/');
-
-
-
-
-
-
-
+module.exports = {
+    createSchema: create_schema
+}
